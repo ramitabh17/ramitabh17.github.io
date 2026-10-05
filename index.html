@@ -9,9 +9,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png">
 </head>
 <body>
 
+<canvas id="net" aria-hidden="true"></canvas>
 <div class="bg-grid" aria-hidden="true"></div>
 
 <header class="nav">
@@ -33,31 +37,39 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-inner">
-      <p class="eyebrow">Senior Platform Engineer @ Ticketmaster</p>
-      <h1>Ramit Amitabh</h1>
-      <p class="hero-sub">
-        I build and operate cloud infrastructure — Kubernetes platforms, CI/CD systems, and
-        observability pipelines — across AWS and GCP. 7+ years, first-principles approach,
-        increasingly AI-assisted.
-      </p>
-      <div class="hero-tags">
-        <span class="tag">Kubernetes</span>
-        <span class="tag">AWS</span>
-        <span class="tag">Terraform</span>
-        <span class="tag">SRE</span>
-        <span class="tag">AI-Assisted Engineering</span>
+      <div class="hero-text">
+        <p class="eyebrow">Senior Platform Engineer @ Ticketmaster</p>
+        <h1>Ramit Amitabh</h1>
+        <p class="hero-sub">
+          I build and operate cloud infrastructure — Kubernetes platforms, CI/CD systems, and
+          observability pipelines — across AWS and GCP. 7+ years, first-principles approach,
+          increasingly AI-assisted.
+        </p>
+        <div class="hero-tags">
+          <span class="tag">Kubernetes</span>
+          <span class="tag">AWS</span>
+          <span class="tag">Terraform</span>
+          <span class="tag">SRE</span>
+          <span class="tag">AI-Assisted Engineering</span>
+        </div>
+        <div class="hero-links">
+          <a class="btn btn-primary" href="mailto:ramit.amitabh17@gmail.com">Get in touch</a>
+          <a class="btn btn-ghost" href="https://github.com/ramitabh17" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/ramit-amitabh/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn btn-ghost" href="https://x.com/ramitabh17" target="_blank" rel="noopener">X / Twitter</a>
+        </div>
       </div>
-      <div class="hero-links">
-        <a class="btn btn-primary" href="mailto:ramit.amitabh17@gmail.com">Get in touch</a>
-        <a class="btn btn-ghost" href="https://github.com/ramitabh17" target="_blank" rel="noopener">GitHub</a>
-        <a class="btn btn-ghost" href="https://www.linkedin.com/in/ramit-amitabh/" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="btn btn-ghost" href="https://x.com/ramitabh17" target="_blank" rel="noopener">X / Twitter</a>
+      <div class="hero-photo">
+        <div class="photo-ring">
+          <img src="assets/ramit.jpg" alt="Ramit Amitabh" width="320" height="320">
+        </div>
+        <span class="status-pill"><span class="status-dot"></span> Open to contract work</span>
       </div>
     </div>
   </section>
 
   <!-- ABOUT -->
-  <section id="about" class="section">
+  <section id="about" class="section" data-reveal>
     <h2 class="section-title"><span class="section-num">01</span> About</h2>
     <div class="section-body about-body">
       <p>
@@ -88,11 +100,11 @@
   </section>
 
   <!-- EXPERIENCE -->
-  <section id="experience" class="section">
+  <section id="experience" class="section" data-reveal>
     <h2 class="section-title"><span class="section-num">02</span> Experience</h2>
     <div class="timeline">
 
-      <div class="tl-item">
+      <div class="tl-item" data-reveal-item>
         <div class="tl-marker"></div>
         <div class="tl-content">
           <div class="tl-head">
@@ -110,7 +122,7 @@
         </div>
       </div>
 
-      <div class="tl-item">
+      <div class="tl-item" data-reveal-item>
         <div class="tl-marker"></div>
         <div class="tl-content">
           <div class="tl-head">
@@ -127,7 +139,7 @@
         </div>
       </div>
 
-      <div class="tl-item">
+      <div class="tl-item" data-reveal-item>
         <div class="tl-marker"></div>
         <div class="tl-content">
           <div class="tl-head">
@@ -143,7 +155,7 @@
         </div>
       </div>
 
-      <div class="tl-item">
+      <div class="tl-item" data-reveal-item>
         <div class="tl-marker"></div>
         <div class="tl-content">
           <div class="tl-head">
@@ -158,7 +170,7 @@
         </div>
       </div>
 
-      <div class="tl-item">
+      <div class="tl-item" data-reveal-item>
         <div class="tl-marker"></div>
         <div class="tl-content">
           <div class="tl-head">
@@ -177,7 +189,7 @@
   </section>
 
   <!-- SKILLS -->
-  <section id="skills" class="section">
+  <section id="skills" class="section" data-reveal>
     <h2 class="section-title"><span class="section-num">03</span> Skills</h2>
     <div class="skills-grid">
 
@@ -245,41 +257,41 @@
   </section>
 
   <!-- PROJECTS -->
-  <section id="projects" class="section">
+  <section id="projects" class="section" data-reveal>
     <h2 class="section-title"><span class="section-num">04</span> Projects</h2>
     <div class="project-grid">
 
-      <a class="project-card" href="https://github.com/ramitabh17/node-app-eks-terraform" target="_blank" rel="noopener">
+      <a class="project-card" data-reveal-item href="https://github.com/ramitabh17/node-app-eks-terraform" target="_blank" rel="noopener">
         <h4>node-app-eks-terraform</h4>
         <p>Terraform-provisioned AWS EKS cluster for a containerized Node.js service — cluster, node groups, and networking as code.</p>
         <span class="project-tag">Terraform · EKS</span>
       </a>
 
-      <a class="project-card" href="https://github.com/ramitabh17/node-app-cicd-ecs-terraform" target="_blank" rel="noopener">
+      <a class="project-card" data-reveal-item href="https://github.com/ramitabh17/node-app-cicd-ecs-terraform" target="_blank" rel="noopener">
         <h4>node-app-cicd-ecs-terraform</h4>
         <p>End-to-end CI/CD pipeline (CodePipeline/CodeBuild/CodeDeploy) deploying a Node.js app to ECS, infra provisioned via Terraform.</p>
         <span class="project-tag">Terraform · ECS · CI/CD</span>
       </a>
 
-      <a class="project-card" href="https://github.com/ramitabh17/flask-app-cicd-ecs" target="_blank" rel="noopener">
+      <a class="project-card" data-reveal-item href="https://github.com/ramitabh17/flask-app-cicd-ecs" target="_blank" rel="noopener">
         <h4>flask-app-cicd-ecs</h4>
         <p>Flask app on AWS ECS with a CodeBuild/CodeDeploy CI/CD pipeline, infrastructure provisioned via Terraform.</p>
         <span class="project-tag">Terraform · ECS · CI/CD</span>
       </a>
 
-      <a class="project-card" href="https://github.com/ramitabh17/node-app-ecs-terraform" target="_blank" rel="noopener">
+      <a class="project-card" data-reveal-item href="https://github.com/ramitabh17/node-app-ecs-terraform" target="_blank" rel="noopener">
         <h4>node-app-ecs-terraform</h4>
         <p>Terraform configuration for deploying a containerized Node.js app on AWS ECS.</p>
         <span class="project-tag">Terraform · ECS</span>
       </a>
 
-      <a class="project-card" href="https://github.com/ramitabh17/aws-resource-tagging-boto-python" target="_blank" rel="noopener">
+      <a class="project-card" data-reveal-item href="https://github.com/ramitabh17/aws-resource-tagging-boto-python" target="_blank" rel="noopener">
         <h4>aws-resource-tagging-boto-python</h4>
         <p>Python/Boto3 scripts for auditing and enforcing resource tagging across AWS accounts.</p>
         <span class="project-tag">Python · Boto3</span>
       </a>
 
-      <a class="project-card project-card-more" href="https://github.com/ramitabh17" target="_blank" rel="noopener">
+      <a class="project-card project-card-more" data-reveal-item href="https://github.com/ramitabh17" target="_blank" rel="noopener">
         <h4>More on GitHub →</h4>
         <p>Full repo list, including upcoming AI-assisted infrastructure workflow write-ups.</p>
       </a>
@@ -288,7 +300,7 @@
   </section>
 
   <!-- WRITING -->
-  <section id="writing" class="section">
+  <section id="writing" class="section" data-reveal>
     <h2 class="section-title"><span class="section-num">05</span> Writing</h2>
     <div class="section-body">
       <p>
@@ -304,7 +316,7 @@
   </section>
 
   <!-- CONTACT -->
-  <section id="contact" class="section section-contact">
+  <section id="contact" class="section section-contact" data-reveal>
     <h2 class="section-title"><span class="section-num">06</span> Contact</h2>
     <div class="section-body">
       <p>
@@ -328,5 +340,6 @@
   </p>
 </footer>
 
+<script src="js/main.js"></script>
 </body>
 </html>
